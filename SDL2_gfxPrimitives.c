@@ -1762,13 +1762,13 @@ int filledCircleRGBA(SDL_Renderer * renderer, Sint16 x, Sint16 y, Sint16 rad, Ui
 #ifdef _M_X64
 #include <emmintrin.h>
 static __inline long 
-	lrint(float f) 
+	__lrint(float f) 
 {
 	return _mm_cvtss_si32(_mm_load_ss(&f));
 }
 #elif defined(_M_IX86)
 __inline long int
-	lrint (double flt)
+	__lrint (double flt)
 {	
 	int intgr;
 	_asm
